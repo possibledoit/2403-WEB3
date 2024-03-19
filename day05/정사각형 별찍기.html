@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>별찍기</title>
+    <title>정사각형 별찍기</title>
 </head>
 <body>
     <!-- 별(*)을 콘솔에 5개 출력하는 반복문을 작성해봅시다. -->
     <script>
-        for(let j = 0 ; j < 5; j++) {
-            for(let i = 0 ; i < 5 ; i++) {
+        document.write(`<h1>정사각형 별찍기</h1>`)
+        for(let i = 0 ; i < 5; i++) {
+            for(let j = 0 ; j < 5 ; j++) {
                 document.write('&nbsp;*&nbsp;')
             }
             document.write('<br>')
