@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>활용</title>
+    <style>
+        .active {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+
+    <script>
+        const container = document.querySelector('.container');
+
+        const 서버에서온듯한데이터 = ['오랜만이야','정말','보고싶었지만','내','하찮은자존심이','허락안했어']
+        for(let i = 0 ; i < 서버에서온듯한데이터.length ; i ++) {
+            // 새로운 태그 생성
+            const myDiv = document.createElement('div');
+            // textnode 생성
+            const textnode = document.createTextNode(서버에서온듯한데이터[i]);
+            // textnode를 태그 내에 삽입
+            myDiv.appendChild(textnode);
+
+            myDiv.addEventListener('mouseenter', ()=>{
+                //  if(myDiv.classList.contains('active')) {
+                //  myDiv.classList.remove('active');
+                //  }
+                //  else {
+                //    myDiv.classList.add('active');
+                //  }
+                //  })
+
+                // 위의 작성을 한 줄로 줄이면
+                myDiv.classList.toggle('active'); // 요 방식을 많이 사용한다.
+            })
+            // container에 생성한 div 삽입하기
+            container.appendChild(myDiv);
+        }
+    </script>
+</body>
+</html>

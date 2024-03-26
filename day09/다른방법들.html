@@ -15,16 +15,33 @@
     </button>
 
     <script>
-        const 인사버튼 = document.getElementById('my-button');
 
-        // js로 가져온 html 객체의 onclick property에 함수를 지정해주는 방식(1)
-        인사버튼.onclick = 인사하기;
+        const 홍길동 = {
+            키 : 250 ,
+            몸무게 : 20
+        }
 
-        // ---
+        console.log(홍길동.키); // 250
 
-        // js로 가져온 html 객체의 onclick property에 함수를 지정해주는 방식(2)
-        function 인사하기() {
-            alert('안녕');
+        홍길동.키 = 500
+
+        console.log(홍길동.키); // 500
+
+        묶음();
+        function 묶음() {
+
+            const 인사버튼 = document.getElementById('my-button');
+
+            // js로 가져온 html 객체의 onclick property에 함수를 지정해주는 방식
+            인사버튼.onclick = 인사하기; // 실행 (Scope의 원리)
+            // 위처럼 작성하면 addEventListener처럼 Scope(스코프)에 알맞는 함수에 접근할 수 있다.
+            // 하지만 property(프로퍼티) 특성상 하나의 함수만 연결해줄 수 있어 자유도가 떨어진다.
+
+            // ---
+
+            function 인사하기() { // 실행 안됨 (Scope의 원리)
+                alert('안녕');
+            }
         }
     </script>
 </body>
